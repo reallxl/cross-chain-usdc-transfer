@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body,
+#root {
+  width: 100vw;
+  width: 100dvw;
+  height: 100vh;
+  height: 100dvh;
+}
