@@ -1,44 +1,48 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import Dropdown from '../Dropdown';
+import Dropdown from "../Dropdown";
+import chains from "@/config/chains";
 
 const TransferChip = ({
   type,
   chain,
   onChainChange,
   balance = 0,
-  amount = '',
+  amount = "",
   onAmountChange,
 }) => {
-  const handleInput = ({ key, preventDefault, stopPropagation }) => {
+  const handleInput = (e) => {
+    const { key } = e;
     if (
-      (key === 'Backspace' && amount.length) ||
-      (key === '.' && !amount.includes('.')) ||
+      (key === "Backspace" && amount.length) ||
+      (key === "." && !amount.includes(".")) ||
       Number(key) === +key
     )
       return;
 
-    preventDefault();
-    stopPropagation();
+    e.preventDefault();
+    e.stopPropagation();
   };
 
   return (
     <div className="w-full rounded-md bg-primaryBg p-2">
-      <div className="flex gap-2 py-2">
+      <div className="flex items-center gap-2 py-2">
         <span>{type}</span>
         <Dropdown
-          value={chain}
+          options={chains}
+          selectedItem={chain}
           onChange={onChainChange}
         />
         <div className="ms-auto">
-          Bal: <span className="text-white">{balance}</span> USDC
+          Bal: <span className="text-white">{Number(balance).toFixed(1)}</span>{" "}
+          USDC
         </div>
       </div>
       <hr className="border-text opacity-10"></hr>
       <input
         className="w-full border-transparent bg-primaryBg py-2 text-2xl text-white focus:outline-none"
         onKeyDown={handleInput}
-        onChange={onAmountChange}
+        onChange={({ target: { value } }) => onAmountChange(value)}
         value={amount}
         placeholder="0.0"
       ></input>
@@ -48,7 +52,7 @@ const TransferChip = ({
 
 TransferChip.propTypes = {
   type: PropTypes.string.isRequired,
-  chain: PropTypes.string,
+  chain: PropTypes.object,
   onChainChange: PropTypes.func.isRequired,
   balance: PropTypes.number,
   amount: PropTypes.string,

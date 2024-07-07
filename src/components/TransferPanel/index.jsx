@@ -1,9 +1,9 @@
-import { useState } from 'react';
-import { useIntl } from 'react-intl';
+import { useState } from "react";
+import { useIntl } from "react-intl";
 
-import { TransferChip } from '..';
-import SwitchButton from '../SwitchButton';
-import useChainData from '@/hooks/useChainData';
+import { TransferChip } from "..";
+import SwitchButton from "../SwitchButton";
+import useChainData from "@/hooks/useChainData";
 
 const TransferPanel = () => {
   const [reversed, setReversed] = useState();
@@ -15,7 +15,7 @@ const TransferPanel = () => {
   return (
     <div className="flex size-full flex-col gap-4 rounded-lg border-2 border-secondary bg-primary px-4 py-8 text-text md:h-4/5 md:w-[470px]">
       <h2 className="text-2xl font-semibold text-white">
-        {formatMessage({ id: 'title' })}
+        {formatMessage({ id: "title" })}
       </h2>
       <div className="relative flex w-full flex-col gap-4">
         <TransferChip

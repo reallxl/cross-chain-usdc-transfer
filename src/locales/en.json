@@ -1,3 +1,20 @@
 {
-  "title": "Transfer"
+  "title": "Transfer",
+  "chain": {
+    "ehtereum": "Ethereum",
+    "optimism": "Optimism",
+    "arbitrum": "Arbitrum",
+    "blast": "Blast",
+    "polygon": "Polygon",
+    "base": "Base",
+    "zksync-era": "zkSync Era",
+    "zkevm": "Polygon zkEVM",
+    "linea": "Linea",
+    "bsc": "BSC",
+    "avanlanche": "Avalanche",
+    "gnosis": "Gnosis",
+    "aurora": "Aurora",
+    "mode": "Mode",
+    "scroll": "Scroll"
+  }
 }

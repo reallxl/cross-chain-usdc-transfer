@@ -1,21 +1,21 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState } from "react";
 
 const useChainData = () => {
   const [chain, setChain] = useState();
-  const [balance, setBalance] = useState(Math.random().toFixed(1));
-  const [amount, setAmount] = useState('');
+  const [balance, setBalance] = useState(Math.random());
+  const [amount, setAmount] = useState("");
 
   useEffect(() => {
     if (!chain) return;
-    setBalance();
+    setBalance(0);
   }, [chain]);
 
   return {
     chain,
-    onChainChange: ({ target: { value } }) => setChain(value),
+    onChainChange: (value) => setChain(value),
     balance,
     amount,
-    onAmountChange: ({ target: { value } }) => setAmount(value),
+    onAmountChange: (value) => setAmount(value),
   };
 };
 

@@ -1,12 +1,12 @@
-import { useState } from 'react';
-import { IntlProvider } from 'react-intl';
+import { useState } from "react";
+import { IntlProvider } from "react-intl";
 
-import TransferPanel from './components/TransferPanel';
-import { flattenMessages } from './utils/helpers';
-import messages from './locales';
+import TransferPanel from "./components/TransferPanel";
+import { flattenMessages } from "./utils/helpers";
+import messages from "./locales";
 
 const App = () => {
-  const [locale] = useState('en');
+  const [locale] = useState("en");
 
   return (
     <IntlProvider
@@ -14,7 +14,7 @@ const App = () => {
       locale={locale}
       defaultLocale="en"
     >
-      <main className="flex size-full items-center justify-center bg-primaryBg">
+      <main className="flex size-full items-center justify-center overflow-hidden bg-primaryBg">
         <TransferPanel />
       </main>
     </IntlProvider>

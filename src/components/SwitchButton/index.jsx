@@ -1,6 +1,6 @@
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
 
-import { ArrowCircleUpIcon } from '@/assets';
+import { ArrowCircleUpIcon } from "@/assets";
 
 const SwitchButton = ({ onClick }) => {
   return (
@@ -9,7 +9,7 @@ const SwitchButton = ({ onClick }) => {
       onClick={onClick}
     >
       <div className="rounded-full bg-primaryBg p-1">
-        <ArrowCircleUpIcon className="size-8 rotate-180 transition-transform hover:rotate-0 [&_*]:fill-white" />
+        <ArrowCircleUpIcon className="size-8 rotate-180 transition-transform *:fill-white hover:rotate-0" />
       </div>
     </button>
   );
