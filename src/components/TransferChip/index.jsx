@@ -24,6 +24,16 @@ const TransferChip = ({
     e.stopPropagation();
   };
 
+  const handleChange = ({ target: { value } }) => {
+    const c = value.slice(-1);
+    if (Number(c) !== +c && c !== ".") {
+      onAmountChange(value.slice(0, -1));
+      return;
+    }
+
+    onAmountChange(value);
+  };
+
   return (
     <div className="w-full rounded-md bg-primaryBg p-2">
       <div className="flex items-center gap-2 py-2">
@@ -42,7 +52,7 @@ const TransferChip = ({
       <input
         className="w-full border-transparent bg-primaryBg py-2 text-2xl text-white focus:outline-none"
         onKeyDown={handleInput}
-        onChange={({ target: { value } }) => onAmountChange(value)}
+        onChange={handleChange}
         value={amount}
         placeholder="0.0"
       ></input>
