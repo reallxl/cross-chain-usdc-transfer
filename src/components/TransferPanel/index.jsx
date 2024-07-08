@@ -28,6 +28,9 @@ const TransferPanel = () => {
           {...(reversed ? srcChainProps : dstChainProps)}
         />
       </div>
+      <button className="w-full rounded-md bg-secondary py-2 font-semibold text-white">
+        {formatMessage({ id: "button" })}
+      </button>
     </div>
   );
 };
